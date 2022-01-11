@@ -28,3 +28,12 @@ php artisan ui vue --auth
 ```
 npm install && npm run dev
 ```
+
+
+### Artisan Commands
+
+* Create migration
+
+```
+php artisan make:migration create_links_table
+```

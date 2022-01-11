@@ -9,27 +9,42 @@
                 </div>
 
                 <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="card bg-light mb-3">
-                                <div class="card-body">
-                                    <h5 class="card-title text-center">
-                                        <a href="{{ route('links.index') }}">List Links</a>
-                                    </h5>
+                    @guest
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card bg-light mb-3">
+                                    <div class="card-body text-center">
+                                        <a href="{{ route('login') }}">
+                                            You must first login
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="card bg-light mb-3">
-                                <div class="card-body">
-                                    <h5 class="card-title text-center">
-                                        <a href="{{ route('links.create') }}">Add Link</a>
-                                    </h5>
+                    @else
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card bg-light mb-3">
+                                    <div class="card-body text-center">
+                                        <a href="{{ route('links.index') }}">
+                                            List Links
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card bg-light mb-3">
+                                    <div class="card-body text-center">
+                                        <a href="{{ route('links.create') }}">
+                                            Add Link
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    @endguest
                 </div>
+
             </div>
         </div>
     </div>

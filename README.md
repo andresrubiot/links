@@ -29,6 +29,14 @@ php artisan ui vue --auth
 npm install && npm run dev
 ```
 
+## Testing form
+
+Create a feature test
+
+```
+php artisan make:test SubmitLinkTest
+```
+
 
 ### Artisan Commands
 

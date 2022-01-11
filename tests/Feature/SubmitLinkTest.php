@@ -31,4 +31,14 @@ class SubmitLinkTest extends TestCase
         $this->get(route('links.index'))
             ->assertSee('Example title');
     }
+
+    /** @test */
+    public function link_is_not_created_if_validation_fails()
+    {
+        $response = $this->post(route('links.store'));
+
+        $response->assertSessionHasErrors([
+            'title', 'url', 'description'
+        ]);
+    }
 }

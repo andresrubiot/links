@@ -63,3 +63,11 @@ This command will drop all database information and re-run migration and run see
 ```
 php artisan migrate:fresh --seed
 ```
+
+* Thinker shell
+
+Thinker is a shell to work with the model data
+
+```
+php artisan tinker
+```

@@ -71,3 +71,18 @@ Thinker is a shell to work with the model data
 ```
 php artisan tinker
 ```
+
+
+* Create controller
+
+This command create a simple controller
+
+```
+php artisan make:controller LinkController
+```
+
+This command create a resource controller
+
+```
+php artisan make:controller LinkController -r
+```

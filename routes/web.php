@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Link;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
+/** Guest Routes */
+Route::get('/', 'IndexController@index')->name('index');
+Route::resource('links', 'LinksController');
+
+
+/** Users Routes */
 Route::get('/home', 'HomeController@index')->name('home');

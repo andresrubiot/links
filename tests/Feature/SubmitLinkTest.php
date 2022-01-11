@@ -41,4 +41,30 @@ class SubmitLinkTest extends TestCase
             'title', 'url', 'description'
         ]);
     }
+
+    /** @test */
+    public function link_is_not_created_with_an_invalid_url()
+    {
+        $this->withoutExceptionHandling();
+
+        $invalids = ['//invalid-url.com', 'invalid-url', 'invalid.com'];
+
+        foreach ($invalids as $invalid) {
+            try {
+                $response = $this->post(route('links.store'), [
+                    'title' => 'Example title',
+                    'url' => $invalid,
+                    'description' => 'Exaple description'
+                ]);
+            } catch (\Throwable $e) {
+                $this->assertEquals(
+                    'The url format is invalid.',
+                    $e->validator->errors()->first('url')
+                );
+                continue;
+            }
+
+            $this->fail("The URL $invalid passed validation when it should have failed.");
+        }
+    }
 }

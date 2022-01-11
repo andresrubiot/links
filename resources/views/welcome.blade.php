@@ -85,8 +85,8 @@
                 </div>
 
                 <div class="links">
-                    <a href="{{ route('links.index') }}">Ver Links</a>
-                    <a href="{{ route('links.create') }}">Crear Links</a>
+                    <a href="{{ route('links.index') }}">List Links</a>
+                    <a href="{{ route('links.create') }}">Add Link</a>
                 </div>
             </div>
         </div>

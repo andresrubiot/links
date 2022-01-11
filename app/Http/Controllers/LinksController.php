@@ -37,7 +37,15 @@ class LinksController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'title' => 'required|max:255',
+            'url' => 'required|url|max:255',
+            'description' => 'required|max:255'
+        ]);
+
+        $link = tap(new Link($data))->save();
+
+        return redirect(route('links.index'));
     }
 
     /**

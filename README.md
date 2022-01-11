@@ -37,3 +37,29 @@ npm install && npm run dev
 ```
 php artisan make:migration create_links_table
 ```
+
+* Create model
+
+```
+php artisan make:model Link
+```
+
+* Create model and factory
+
+```
+php artisan make:model --factory Link
+```
+
+* Create seeder
+
+```
+php artisan make:seeder LinksTableSeeder
+```
+
+* Refresh database and run seeder
+
+This command will drop all database information and re-run migration and run seeders
+
+```
+php artisan migrate:fresh --seed
+```
